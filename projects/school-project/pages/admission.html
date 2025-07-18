@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEA | Admission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/de962d8192.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="../index.html">JEA</a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="programs.html">Programs</a>
+                <a href="admission.html">Admission</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">Admission</h1>
+        
+        <section class="admission-section">
+            <h2>Join Us</h2>
+            <p>Thank you for your interest in Jubilant Elite Academy! Below, you will find the steps for the admission process.</p>
+
+            <div class="admission-steps">
+                <div class="step">
+                    <h3>Step 1: Application Form</h3>
+                    <p>Fill out the online application form or visit our office to collect a physical copy.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 2: Entrance Exam</h3>
+                    <p>Appear for the entrance examination scheduled at the school premises.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 3: Document Submission</h3>
+                    <p>Submit the required documents, including previous academic records and proof of identity.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 4: Admission Confirmation</h3>
+                    <p>Once selected, complete the fee payment process to secure your seat.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="admission-criteria">
+            <h2>Eligibility Criteria</h2>
+            <p>Students must meet the following criteria:</p>
+            <ul>
+                <li>Minimum academic qualifications as per the grade applying for.</li>
+                <li>Successful completion of the entrance examination.</li>
+                <li>Required age as per grade level.</li>
+            </ul>
+        </section>
+
+        <section class="admission-form">
+            <h2>Admission Form</h2>
+            <form id="admission-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="student-name">Student Name:</label>
+                    <input type="text" id="student-name" name="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade Applying For:</label>
+                    <select id="grade" name="grade" required>
+                        <option value="">Select Grade</option>
+                        <option value="1">Grade 1</option>
+                        <option value="2">Grade 2</option>
+                        <option value="3">Grade 3</option>
+                        <option value="4">Grade 4</option>
+                        <option value="5">Grade 5</option>
+                        <option value="6">Grade 6</option>
+                        <option value="7">Grade 7</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name:</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Information:</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit Application</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Form Submitted</h2>
+            <p>You have successfully submitted the form.</p>
+            <p class="success"> &check; Thank you for submission</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>JEA</h3>
+                <p>Panacea a Nostrum</p>
+                <p style="margin-top: 0.75rem; font-style: italic; font-size: 0.875rem;">Empowering minds, shaping futures</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="facilities.html">Facilities</a></p>
+                <p><a href="programs.html">Programs</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div>
+                <h3>Connect With Us</h3>
+                <p><a href="https://www.facebook.com/@jubilanteliteacademy"><i class="fa-brands fa-facebook fb"></i></a></p>
+            </div>
+            <div>
+                <h3>Creators</h3>
+                <p>STEMz</p>
+                <p style="margin-top: 0.75rem; font-size: 0.875rem;">Building tomorrow's education today</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('admission-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('confirmation-modal').style.display = 'block';
+            document.querySelector('.main-content').style.filter = 'blur(5px)';
+        });
+        
+        document.querySelector('.close-button').addEventListener('click', function() {
+            document.getElementById('confirmation-modal').style.display = 'none';
+            document.querySelector('.main-content').style.filter = 'none';
+        });
+        
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('confirmation-modal')) {
+                document.getElementById('confirmation-modal').style.display = 'none';
+                document.querySelector('.main-content').style.filter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
