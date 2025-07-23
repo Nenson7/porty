@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Nenson</title>
+  <link rel="stylesheet" href="../css/pico.min.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><strong>Porty</strong></li>
+      </ul>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#project">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="index.html" aria-current="page">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <hgroup>
+        <h1>Blog</h1>
+        <p>Thoughts on development, learning journey, and technical insights</p>
+      </hgroup>
+    </section>
+
+    <section id="blog-posts">
+      <!-- Blog posts will be rendered here -->
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>&copy; 2025 Nenson. All rights reserved.</small>
+  </footer>
+
+  <script>
+ /*   const blogPosts = [
+      {
+        title: "Learning javascript by building a Todo-web-app",
+        excerpt: "How i made a simple working todo-app for personal use with bootstrap for styling",
+        date: "2025-07-21",
+        tags: ["CSS", "Todo-app"],
+        slug: "todo-app"
+      },
+    ];
+ */
+   const blogPosts = [];
+
+    function formatDate(dateString) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString('en-US', options);
+    }
+
+    function renderBlogPosts() {
+      const postsContainer = document.getElementById('blog-posts');
+      
+      if (blogPosts.length === 0) {
+        postsContainer.innerHTML = `
+          <article>
+            <header>
+              <h2>Coming Soon</h2>
+            </header>
+            <p>I'm working on some interesting blog posts about development, learning experiences, and technical insights. Check back soon!</p>
+          </article>
+        `;
+        return;
+      }
+
+      postsContainer.innerHTML = blogPosts.map(post => `
+        <article>
+          <header>
+            <hgroup>
+              <h2><a href="blog/${post.slug}/index.html">${post.title}</a></h2>
+              <p><small>${formatDate(post.date)} • ${post.tags.join(', ')}</small></p>
+            </hgroup>
+          </header>
+          <p>${post.excerpt}</p>
+          <footer>
+            <a href="blog/${post.slug}/index.html" role="button" class="outline">Read more</a>
+          </footer>
+        </article>
+      `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderBlogPosts);
+  </script>
+</body>
+</html>
