@@ -7,25 +7,68 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
     <link rel="preload" href="/static/Lato-Regular.woff" as="font" type="font/woff" crossorigin />
     <link rel="preload" href="/static/Lato-Bold.woff" as="font" type="font/woff" crossorigin />
-    <link rel="stylesheet" href="output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      @font-face {
+        font-family: 'Lato';
+        src: url('/static/Lato-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Lato';
+        src: url('/static/Lato-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+      }
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-background text-text-primary flex flex-col font-lato">
-    <header class="m-2 border border-border">
+  <body class="min-h-screen bg-black text-gray-300 flex flex-col">
+    <header class="m-2 border border-gray-700">
       <nav class="h-12 flex justify-center items-center gap-6 font-medium">
-        <a href="#" class="hover:text-accent-secondary transition duration-300 ease-in-out">Home</a>
-        <a href="#" class="hover:text-accent-secondary transition duration-300 ease-in-out">Projects</a>
-        <a href="#" class="hover:text-accent-secondary transition duration-300 ease-in-out">Skills</a>
-        <a href="#" class="hover:text-accent-secondary transition duration-300 ease-in-out">Blog</a>
+        <a href="" class="hover:text-green-400 transition duration-300 ease-in-out">Home</a>
+        <a href="" class="hover:text-green-400 transition duration-300 ease-in-out">Projects</a>
       </nav>
     </header>
 
-    <main class="flex-1 flex items-center justify-center">
-      <h1 class="text-4xl font-bold text-accent-primary">Welcome to My Portfolio</h1>
-    </main>
+    <section class="flex-1 flex flex-col items-center justify-center gap-6">
+      <h1 class="text-4xl text-center flex items-center justify-center">
+        <a href="https://github.com/Nenson7" target="_blank" class="font-bold text-green-500 hover:text-green-400 transition duration-300 inline-flex items-center gap-2 group">
+          <svg class="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -translate-x-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          _Nenson
+        </a><span class="text-gray-300">'s portfolio</span>
+      </h1>
+      
+      <div id="projects" class="flex flex-col md:flex-row gap-6 w-full max-w-6xl px-4">
+        <article class="border border-gray-700 flex-1 h-96 hover:border-blue-500 transition duration-300 cursor-pointer">
+          <div class="m-4 h-full flex flex-col">
+            <h2 class="text-3xl font-bold text-green-500">Project One</h2>
+            <p class="text-sm text-gray-400 mb-4">A minimalist web application built with modern technologies.</p>
+            <div class="flex-1 bg-gray-900 border border-gray-800 overflow-hidden">
+              <img src="https://placehold.co/600x400/1a1a1a/4ade80?text=Project+Screenshot" alt="Project One Screenshot" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </article>
 
-    <footer class="m-2 text-center text-text-secondary text-sm border-t border-border pt-2">
+        <article class="border border-gray-700 flex-1 h-96 hover:border-blue-500 transition duration-300 cursor-pointer">
+          <div class="m-4 h-full flex flex-col">
+            <h2 class="text-3xl font-bold text-green-500">Project Two</h2>
+            <p class="text-sm text-gray-400 mb-4">An innovative solution for everyday problems.</p>
+            <div class="flex-1 bg-gray-900 border border-gray-800 overflow-hidden">
+              <img src="https://placehold.co/600x400/1a1a1a/4ade80?text=Project+Screenshot" alt="Project Two Screenshot" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="m-2 text-center text-gray-400 text-sm border-t border-gray-700 pt-2">
       <small>&copy; 2025 Nenson Chhetri. All rights reserved.</small>
     </footer>
   </body>
 </html>
-
